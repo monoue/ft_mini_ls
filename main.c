@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:33:20 by monoue            #+#    #+#             */
-/*   Updated: 2020/11/30 14:04:28 by monoue           ###   ########.fr       */
+/*   Updated: 2020/11/30 14:12:41 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	main(int argc, char *argv[])
 	{
 		ft_printf("%s\n", dir_ent->d_name);
 	}
+	closedir(dir);
 	return (EXIT_SUCCESS);
 }
