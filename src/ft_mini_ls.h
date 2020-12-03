@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/02 16:16:25 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/03 10:24:16 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
 */
 
 # define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
+
+typedef struct stat t_stat;
 
 #endif
