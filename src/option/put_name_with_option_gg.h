@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mini_ls.h                                       :+:      :+:    :+:   */
+/*   put_name_with_option_gg.h                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/03 11:55:15 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/03 11:54:08 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/03 11:54:41 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINI_LS_H
-# define FT_MINI_LS_H
+#ifndef PUT_NAME_WITH_OPTION_GG_H
+# define PUT_NAME_WITH_OPTION_GG_H
 
-# include "defs.h"
-# include "dirent.h"
-# include "libft/libft.h"
-// # include "sys/types.h"
 # include "sys/stat.h"
+# include "../libft/libft.h"
 
-# include "option/put_name_with_option_gg.h"
-# include "option/put_option_ff.h"
-# include "option/put_option_l.h"
-
+void	put_name_with_option_gg(const char *name, mode_t mode, bool link_ok);
 
 # define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
-
-typedef struct stat t_stat;
 
 #endif

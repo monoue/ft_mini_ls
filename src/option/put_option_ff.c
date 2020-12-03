@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mini_ls.h                                       :+:      :+:    :+:   */
+/*   put_option_ff.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/03 11:55:15 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/03 11:35:08 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/03 11:36:45 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINI_LS_H
-# define FT_MINI_LS_H
+#include "put_option_ff.h"
 
-# include "defs.h"
-# include "dirent.h"
-# include "libft/libft.h"
-// # include "sys/types.h"
-# include "sys/stat.h"
-
-# include "option/put_name_with_option_gg.h"
-# include "option/put_option_ff.h"
-# include "option/put_option_l.h"
-
-
-# define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
-
-typedef struct stat t_stat;
-
-#endif
+void	put_ff_option(mode_t mode)
+{
+	if (S_ISREG(mode))
+	{
+		if (mode & S_IXUGO)
+			ft_putchar('*');
+	}
+	else
+	{
+		if (S_ISDIR(mode))
+			ft_putchar('/');
+		else if (S_ISLNK(mode))
+			ft_putchar('@');
+		else if (S_ISFIFO(mode))
+			ft_putchar('|');
+		else if (S_ISSOCK(mode))
+			ft_putchar('=');
+	}
+}

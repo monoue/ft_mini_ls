@@ -6,7 +6,7 @@
 #    By: monoue <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 15:33:41 by monoue            #+#    #+#              #
-#    Updated: 2020/12/02 17:00:50 by monoue           ###   ########.fr        #
+#    Updated: 2020/12/03 11:53:46 by monoue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC = gcc
 SRCS_PATH =			src/
 LIBFT_PATH =		$(SRCS_PATH)libft/
 PLAYGROUND_PATH =	playground/
+OPTION_PATH = option/
 
 LIBFT =				$(LIBFT_PATH)libft.a
 
@@ -24,6 +25,9 @@ SRCS_NAME =
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS_NAME += main.c
+SRCS_NAME += $(OPTION_PATH)put_name_with_option_gg.c
+SRCS_NAME += $(OPTION_PATH)put_option_l.c
+SRCS_NAME += $(OPTION_PATH)put_option_ff.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 OBJS = $(SRCS:%.c=%.o)
