@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mini_ls.h                                       :+:      :+:    :+:   */
+/*   put_name_with_option_gg_bonus.h                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 14:21:43 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/03 11:54:08 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/04 11:04:47 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MINI_LS_H
-# define FT_MINI_LS_H
+#ifndef PUT_NAME_WITH_OPTION_GG_H
+# define PUT_NAME_WITH_OPTION_GG_H
 
-# include "defs.h"
-# include "dirent.h"
-# include "../libft/libft.h"
 # include "sys/stat.h"
+# include "../../libft/libft.h"
+
+void	put_name_with_option_gg(const char *name, mode_t mode, bool link_ok);
 
 # define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
-
-typedef struct	s_file_data {
-	char	*name;
-	time_t	tv_sec;
-	long	tv_nsec;
-}				t_file_data;
-
-typedef struct stat	t_stat;
-
-extern bool		g_error_flag;
-
-void			sort_files_by_time(t_file_data *file_data_arr, int files_num);
-void			list_dir(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 09:07:50 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:11:45 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 15:37:27 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int			count_files(void)
 	return (files_num);
 }
 
-static void			put_file_data_arr(t_file_data *file_data_arr, int files_num)
+static void			put_all_file_names(t_file_data *file_data_arr, int files_num)
 {
 	int	index;
 
@@ -91,9 +91,9 @@ void				list_dir(void)
 		return (perror_with_error_flag());
 	file_data_arr = get_all_files_data(dir, files_num);
 	closedir(dir);
-	sort_files(file_data_arr, files_num);
+	sort_files_by_time(file_data_arr, files_num);
 	if (g_error_flag == true)
 		return ;
-	put_file_data_arr(file_data_arr, files_num);
+	put_all_file_names(file_data_arr, files_num);
 	SAFE_FREE(file_data_arr);
 }
