@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:49:35 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 21:06:14 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 23:04:09 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	put_regular_file_color(mode_t mode)
 	else if (mode & S_ISGID)
 		ft_putstr(ESC"[30;43m");
 	else if (mode & S_IXUGO)
-		ft_putstr(ESC"[31m");
+		ft_putstr(ESC"[01;32m");
 	else
 		ft_putstr(ESC"[0m");
 }
@@ -33,13 +33,13 @@ static void	put_dir_color(mode_t mode)
 	else if (mode & S_ISVTX)
 		ft_putstr(ESC"[37;44m");
 	else
-		ft_putstr(ESC"[34m");
+		ft_putstr(ESC"[01;34m");
 }
 
 void		put_file_name_with_color(const char *name, mode_t mode,
-																bool link_ok)
+															bool link_is_ok)
 {
-	if (!link_ok)
+	if (!link_is_ok)
 		ft_putstr(ESC"[31m");
 	else if (S_ISREG(mode))
 		put_regular_file_color(mode);

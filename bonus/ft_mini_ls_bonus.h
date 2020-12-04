@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 21:58:58 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 22:15:17 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct		s_file_data {
 	time_t	tv_sec;
 	long	tv_nsec;
 	mode_t	mode;
+	bool	link_is_ok;
 }					t_file_data;
 
 void				swap_files(t_file_data *file_data_arr, int left, int right);

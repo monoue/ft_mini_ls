@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:33:20 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 21:55:41 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 22:20:35 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	perror_with_error_flag(void)
 static int	set_file_data(t_file_data *file_data, char *file_name)
 {
 	t_stat	dent_stat;
+	t_stat	link_stat;
 
 	if (g_a_flag == true)
 		;
@@ -40,6 +41,7 @@ static int	set_file_data(t_file_data *file_data, char *file_name)
 	file_data->tv_sec = dent_stat.st_mtimespec.tv_sec;
 	file_data->tv_nsec = dent_stat.st_mtimespec.tv_nsec;
 	file_data->mode = dent_stat.st_mode;
+	file_data->link_is_ok = (stat(file_name, &link_stat) == SUCCESS);
 	return (NO_CONTINUE);
 }
 

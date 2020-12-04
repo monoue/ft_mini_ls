@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:03:57 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 21:59:36 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 23:08:23 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ static void	put_padding_spaces(int total_name_len)
 	}
 }
 
-static void	put_file_name(char *file_name, mode_t mode, bool is_last_file)
+static void	put_file_name(char *file_name, mode_t mode, bool link_is_ok,
+															bool is_last_file)
 {
 	int	total_name_len;
 
 	if (g_gg_flag == true)
-		put_file_name_with_color(file_name, mode, true);
+		put_file_name_with_color(file_name, mode, link_is_ok);
 	else
 		ft_putstr(file_name);
 	total_name_len = (int)ft_strlen(file_name);
@@ -57,7 +58,7 @@ static void	put_all_file_names_reversely(t_file_data *file_data_arr,
 		if (index == 0)
 			is_last_file = true;
 		put_file_name(file_data_arr[index].name, file_data_arr[index].mode,
-																is_last_file);
+							file_data_arr[index].link_is_ok, is_last_file);
 		index--;
 	}
 }
@@ -75,7 +76,7 @@ static void	put_all_file_names_in_normal_order(t_file_data *file_data_arr,
 		if (index == files_num - 1)
 			is_last_file = true;
 		put_file_name(file_data_arr[index].name, file_data_arr[index].mode,
-															is_last_file);
+							file_data_arr[index].link_is_ok, is_last_file);
 		index++;
 	}
 }
