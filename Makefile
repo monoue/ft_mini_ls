@@ -6,7 +6,7 @@
 #    By: monoue <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 15:33:41 by monoue            #+#    #+#              #
-#    Updated: 2020/12/04 16:09:54 by monoue           ###   ########.fr        #
+#    Updated: 2020/12/04 17:15:51 by monoue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,6 @@ BSRCS_NAME += put_all_file_names_bonus.c
 BSRCS_NAME += put_type_specifier_bonus.c
 BSRCS_NAME +=
 BSRCS_NAME +=
-BSRCS_NAME += $(OPTION_PATH)put_name_with_option_gg_bonus.c
-BSRCS_NAME += $(OPTION_PATH)put_option_l_bonus.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 OBJS = $(SRCS:%.c=%.o)
