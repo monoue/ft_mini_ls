@@ -18,9 +18,9 @@ SRCS_PATH =			src/
 BONUS_PATH =		bonus/
 LIBFT_PATH =		libft/
 PLAYGROUND_PATH =	playground/
-OPTION_PATH = option/
-SORT_FILES_PATH = sort_files/
-PRINTER_PATH = printer/
+OPTION_PATH =		option/
+SORT_FILES_PATH =	sort_files/
+PRINTER_PATH =		printer/
 
 LIBFT =				$(LIBFT_PATH)libft.a
 
@@ -43,8 +43,6 @@ BSRCS_NAME += $(PRINTER_PATH)put_file_name_with_color_bonus.c
 BSRCS_NAME += count_files_bonus.c
 BSRCS_NAME += set_element_plus_spaces_len_bonus.c
 BSRCS_NAME += is_current_or_parent_dir_bonus.c
-BSRCS_NAME +=
-BSRCS_NAME +=
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 OBJS = $(SRCS:%.c=%.o)
@@ -61,14 +59,6 @@ all: $(NAME)
 bonus: $(BOBJS)
 	@$(MAKE) -C $(LIBFT_PATH);
 	@$(CC) $^ -L$(LIBFT_PATH) -lft -o $(NAME)
-
-run: all
-	@cp -rf $(NAME) $(PLAYGROUND_PATH)
-	@cd $(PLAYGROUND_PATH) && ./$(NAME)
-
-run_bonus: bonus
-	@cp -rf $(NAME) $(PLAYGROUND_PATH)
-	@cd $(PLAYGROUND_PATH) && ./$(NAME)
 
 clean:
 	$(MAKE) -C $(LIBFT_PATH) clean
