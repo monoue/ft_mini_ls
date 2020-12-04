@@ -6,11 +6,11 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 13:13:33 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 14:17:42 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 20:36:56 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mini_ls_bonus.h"
+#include "../ft_mini_ls_bonus.h"
 
 static void	sort_files_by_name(t_file_data *file_data_arr, int files_num)
 {
@@ -35,7 +35,7 @@ static void	sort_files_by_name(t_file_data *file_data_arr, int files_num)
 	}
 }
 
-void	sort_files(t_file_data *file_data_arr, int files_num)
+void		sort_files(t_file_data *file_data_arr, int files_num)
 {
 	sort_files_by_name(file_data_arr, files_num);
 	if (g_t_flag == true)

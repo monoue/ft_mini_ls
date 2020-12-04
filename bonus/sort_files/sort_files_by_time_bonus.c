@@ -6,13 +6,14 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 13:18:34 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 13:18:45 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 20:40:16 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mini_ls_bonus.h"
+#include "../ft_mini_ls_bonus.h"
 
-static void	sort_time_ordered_files_by_name(t_file_data *file_data_arr, int files_num)
+static void	sort_time_ordered_files_by_name(t_file_data *file_data_arr,
+																int files_num)
 {
 	int			l_index;
 	int			r_index;
@@ -79,7 +80,7 @@ static void	sort_files_by_tv_sec(t_file_data *file_data_arr, int files_num)
 	}
 }
 
-void	sort_files_by_time(t_file_data *file_data_arr, int files_num)
+void		sort_files_by_time(t_file_data *file_data_arr, int files_num)
 {
 	sort_files_by_tv_sec(file_data_arr, files_num);
 	sort_files_by_tv_nsec(file_data_arr, files_num);

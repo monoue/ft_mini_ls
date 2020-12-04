@@ -1,14 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_file_name_with_color_bonus.c                   :+:      :+:    :+:   */
+/*   swap_files_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 11:53:04 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 17:11:02 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/04 13:15:25 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/04 20:37:34 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "put_name_with_option_gg_bonus.h"
+#include "../ft_mini_ls_bonus.h"
 
+void	swap_files(t_file_data *file_data_arr, int left, int right)
+{
+	t_file_data tmp;
+
+	tmp = file_data_arr[left];
+	file_data_arr[left] = file_data_arr[right];
+	file_data_arr[right] = tmp;
+}

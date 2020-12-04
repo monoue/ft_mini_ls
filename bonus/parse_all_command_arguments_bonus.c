@@ -6,11 +6,32 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 13:57:45 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 14:14:11 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 20:29:41 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mini_ls_bonus.h"
+
+static int	set_option(char c)
+{
+	if (c == 'A')
+		g_aa_flag = true;
+	else if (c == 'F')
+		g_ff_flag = true;
+	else if (c == 'G')
+		g_gg_flag = true;
+	else if (c == 'a')
+		g_a_flag = true;
+	else if (c == 'r')
+		g_r_flag = false;
+	else if (c == 't')
+		g_t_flag = false;
+	else if (c == '1')
+		g_one_flag = false;
+	else
+		return (ERROR);
+	return (SUCCESS);
+}
 
 static int	parse_command_argument(char *arg)
 {
@@ -22,21 +43,7 @@ static int	parse_command_argument(char *arg)
 	index = 1;
 	while (index < arg_len)
 	{
-		if (arg[index] == 'A')
-			g_aa_flag = true;
-		else if (arg[index] == 'F')
-			g_ff_flag = true;
-		else if (arg[index] == 'G')
-			g_gg_flag = true;
-		else if (arg[index] == 'a')
-			g_a_flag = true;
-		else if (arg[index] == 'r')
-			g_r_flag = true;
-		else if (arg[index] == 't')
-			g_t_flag = true;
-		else if (arg[index] == '1')
-			g_one_flag = true;
-		else
+		if (set_option(arg[index]) == ERROR)
 			return (ERROR);
 		index++;
 	}

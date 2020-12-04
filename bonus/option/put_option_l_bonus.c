@@ -6,11 +6,9 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:35:30 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 11:06:39 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 21:25:21 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "put_option_l_bonus.h"
 
 void	put_file_type(mode_t mode)
 {

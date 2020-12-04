@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:03:57 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 21:08:04 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 21:59:36 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static void	put_file_name(char *file_name, mode_t mode, bool is_last_file)
 static void	put_all_file_names_reversely(t_file_data *file_data_arr,
 																int last_index)
 {
-	int		index;
 	bool	is_last_file;
+	int		index;
 
 	is_last_file = false;
 	index = last_index;

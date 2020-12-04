@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_type_specifier_bonus.c                         :+:      :+:    :+:   */
+/*   count_files_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 11:35:08 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 16:53:23 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/04 21:14:03 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/04 21:19:50 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mini_ls_bonus.h"
 
-int	put_type_specifier(mode_t mode)
+int	count_files(void)
 {
-	if (S_ISREG(mode))
+	DIR				*dir;
+	size_t			files_num;
+	struct dirent	*dir_ent;
+
+	dir = opendir(CURRENT_DIR_PATH);
+	if (dir == NULL)
+		return (ERROR);
+	files_num = 0;
+	while ((dir_ent = readdir(dir)) != NULL)
 	{
-		if (mode & S_IXUGO)
-			return (ft_putchar('*'));
+		if (g_a_flag == true)
+			;
+		else if (g_aa_flag == true)
+		{
+			if (is_current_or_parent_dir(dir_ent->d_name))
+				continue ;
+		}
+		else if (dir_ent->d_name[0] == '.')
+			continue ;
+		files_num++;
 	}
-	else
-	{
-		if (S_ISDIR(mode))
-			return (ft_putchar('/'));
-		else if (S_ISLNK(mode))
-			return (ft_putchar('@'));
-		else if (S_ISFIFO(mode))
-			return (ft_putchar('|'));
-		else if (S_ISSOCK(mode))
-			return (ft_putchar('='));
-	}
-	return (0);
+	closedir(dir);
+	return (files_num);
 }

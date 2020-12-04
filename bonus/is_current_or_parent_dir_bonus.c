@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_files_bonus.c                                 :+:      :+:    :+:   */
+/*   is_current_or_parent_dir_bonus.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 13:15:25 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 13:15:39 by monoue           ###   ########.fr       */
+/*   Created: 2020/12/04 21:18:54 by monoue            #+#    #+#             */
+/*   Updated: 2020/12/04 21:19:41 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_mini_ls_bonus.h"
 
-void	swap_files(t_file_data *file_data_arr, int left, int right)
+bool	is_current_or_parent_dir(char *file_name)
 {
-	t_file_data tmp;
+	const size_t	file_name_len = ft_strlen(file_name);
+	size_t			index;
 
-	tmp = file_data_arr[left];
-	file_data_arr[left] = file_data_arr[right];
-	file_data_arr[right] = tmp;
+	if (file_name_len > 2)
+		return (false);
+	index = 0;
+	while (index < file_name_len)
+	{
+		if (file_name[index] != '.')
+			return (false);
+		index++;
+	}
+	return (true);
 }
