@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   init_format_info.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/10/27 13:55:36 by monoue            #+#    #+#             */
+/*   Updated: 2020/11/30 14:08:33 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#ifndef INIT_FORMAT_INFO_H
+# define INIT_FORMAT_INFO_H
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+# include "defs.h"
+# include <stdbool.h>
+# include <stddef.h>
 
-typedef struct stat	t_stat;
+# define NOT_SET -1
+
+void	init_format_info(t_format_info *info);
 
 #endif

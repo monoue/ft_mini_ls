@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/26 13:22:57 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/15 16:01:48 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char	*str = s;
+	size_t		index;
 
-typedef struct stat	t_stat;
-
-#endif
+	index = 0;
+	while (index < n)
+	{
+		if (str[index] == (char)c)
+			return ((void *)&str[index]);
+		index++;
+	}
+	return (NULL);
+}

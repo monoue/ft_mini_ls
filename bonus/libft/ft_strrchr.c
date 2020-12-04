@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/22 13:50:34 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/20 09:07:07 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+char	*ft_strrchr(const char *s, int c)
+{
+	const unsigned char	uc = c;
+	const int			s_len = (int)ft_strlen(s);
+	int					index;
 
-typedef struct stat	t_stat;
-
-#endif
+	if (s == NULL)
+		return (NULL);
+	index = s_len;
+	while (index >= 0)
+	{
+		if (s[index] == uc)
+			return ((char *)&s[index]);
+		index--;
+	}
+	return (NULL);
+}

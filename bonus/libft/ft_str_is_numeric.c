@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_isdigit_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/10/22 10:27:33 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/22 10:41:37 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+bool	ft_str_is_numeric(const char *str)
+{
+	size_t	index;
 
-typedef struct stat	t_stat;
-
-#endif
+	index = 0;
+	while (str[index] != '\0' && ft_isdigit(str[index]))
+		index++;
+	return (index == ft_strlen(str));
+}

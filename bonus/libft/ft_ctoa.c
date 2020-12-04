@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ctoa.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/10/20 07:20:40 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/22 10:32:38 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+char	*ft_ctoa(char c)
+{
+	char	*c_as_str;
 
-typedef struct stat	t_stat;
-
-#endif
+	c_as_str = ft_strdup("0");
+	if (c_as_str == NULL)
+		return (NULL);
+	c_as_str[0] = c;
+	return (c_as_str);
+}

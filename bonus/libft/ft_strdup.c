@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/23 15:32:49 by monoue            #+#    #+#             */
+/*   Updated: 2020/08/20 10:27:22 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+char	*ft_strdup(const char *original_s)
+{
+	char	*duplicated_s;
+	size_t	index;
 
-typedef struct stat	t_stat;
-
-#endif
+	if (!original_s)
+		return (NULL);
+	duplicated_s = malloc(ft_strlen(original_s) + 1);
+	if (duplicated_s == NULL)
+		return (NULL);
+	index = 0;
+	while (original_s[index] != '\0')
+	{
+		duplicated_s[index] = original_s[index];
+		index++;
+	}
+	duplicated_s[index] = '\0';
+	return (duplicated_s);
+}

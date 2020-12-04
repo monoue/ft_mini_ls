@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   set_zero_minwidth_minus_prec.h                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/10/27 13:47:06 by monoue            #+#    #+#             */
+/*   Updated: 2020/11/30 14:07:25 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#ifndef SET_ZERO_MINWIDTH_MINUS_PREC_H
+# define SET_ZERO_MINWIDTH_MINUS_PREC_H
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+# include "../libft.h"
+# include "defs.h"
 
-typedef struct stat	t_stat;
+void	set_zero_minwidth_minus_prec(char *target, int *index,
+														t_format_info *info);
 
 #endif

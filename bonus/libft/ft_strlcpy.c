@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:33:20 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:09:06 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/22 13:50:34 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/20 09:12:52 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mini_ls.h"
+#include "libft.h"
 
-bool	g_error_flag = false;
-
-int	main(int argc, char *argv[])
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	(void)argv;
-	if (argc > 1)
+	size_t	srclen;
+	size_t	dststr_len;
+	size_t	index;
+
+	if (dst == NULL || src == NULL)
+		return (0);
+	srclen = ft_strlen(src);
+	if (dstsize == 0)
+		return (srclen);
+	dststr_len = MIN(dstsize - 1, srclen);
+	index = 0;
+	while (index < dststr_len)
 	{
-		ft_putstr_fd(ARG_ERR, STDERR_FILENO);
-		return (EXIT_FAILURE);
+		dst[index] = src[index];
+		index++;
 	}
-	list_dir();
-	if (g_error_flag == true)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	dst[index] = '\0';
+	return (srclen);
 }

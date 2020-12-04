@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/23 16:06:06 by monoue            #+#    #+#             */
+/*   Updated: 2020/08/17 08:31:53 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+int	ft_atoi(const char *str)
+{
+	bool			minus_flag;
+	unsigned int	i;
+	long			n;
 
-typedef struct stat	t_stat;
-
-#endif
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	minus_flag = false;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			minus_flag = true;
+		i++;
+	}
+	n = 0;
+	while (ft_isdigit(str[i]))
+	{
+		n = n * 10 + (str[i] - '0');
+		i++;
+	}
+	return (minus_flag ? (int)-n : (int)n);
+}

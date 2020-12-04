@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_xtoa_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/08/06 16:00:02 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/27 14:07:43 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "ft_xtoa_printf.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
-
-typedef struct stat	t_stat;
-
-#endif
+char	*ft_xtoa_printf(unsigned long long num, char conv_c)
+{
+	if (num >= 16)
+		return (ft_strjoin_free_both(ft_xtoa_printf(num / 16, conv_c),
+									ft_xtoa_printf(num % 16, conv_c)));
+	else if (conv_c == 'X')
+		return (ft_ctoa("0123456789ABCDEF"[num]));
+	else
+		return (ft_ctoa("0123456789abcdef"[num]));
+}

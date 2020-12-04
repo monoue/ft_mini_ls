@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/07/23 15:31:15 by monoue            #+#    #+#             */
+/*   Updated: 2020/07/23 15:44:57 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+size_t	ft_intlen(int n)
+{
+	size_t	len;
 
-typedef struct stat	t_stat;
-
-#endif
+	if (n == -2147483648)
+		return (11);
+	len = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+	}
+	while (n > 9)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}

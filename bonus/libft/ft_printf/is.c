@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   is.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/08/06 16:01:15 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/27 14:00:12 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "is.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
+bool	is_of_chars(const unsigned int c, int argc, ...)
+{
+	va_list	ap;
 
-typedef struct stat	t_stat;
+	va_start(ap, argc);
+	while (argc--)
+	{
+		if (va_arg(ap, unsigned int) == c)
+		{
+			va_end(ap);
+			return (true);
+		}
+	}
+	va_end(ap);
+	return (false);
+}
 
-#endif
+bool	isconversion_c(const unsigned int c)
+{
+	if (is_of_chars(c, 9, 'c', 'd', 'i', 'x', 'X', 's', 'u', 'p', '%'))
+		return (true);
+	return (false);
+}

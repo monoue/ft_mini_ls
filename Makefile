@@ -6,7 +6,7 @@
 #    By: monoue <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 15:33:41 by monoue            #+#    #+#              #
-#    Updated: 2020/12/03 11:53:46 by monoue           ###   ########.fr        #
+#    Updated: 2020/12/04 09:10:02 by monoue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,8 @@ SRCS_NAME =
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS_NAME += main.c
-SRCS_NAME += $(OPTION_PATH)put_name_with_option_gg.c
-SRCS_NAME += $(OPTION_PATH)put_option_l.c
-SRCS_NAME += $(OPTION_PATH)put_option_ff.c
+SRCS_NAME += sort_files.c
+SRCS_NAME += list_dir.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 OBJS = $(SRCS:%.c=%.o)

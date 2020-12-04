@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defs.h                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 13:34:12 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 09:04:49 by monoue           ###   ########.fr       */
+/*   Created: 2020/06/29 16:23:14 by monoue            #+#    #+#             */
+/*   Updated: 2020/10/20 10:08:56 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFS_H
-# define DEFS_H
+#include "libft.h"
 
-# define CURRENT_DIR_PATH	"."
-# define ARG_ERR "Arg not permitted\n"
-# define SUCCESS 0
-
-typedef struct stat	t_stat;
-
-#endif
+void	ft_putnbr(int n)
+{
+	if (n == INT_MIN)
+	{
+		write(STDOUT_FILENO, INT_MIN_STR, ft_strlen(INT_MIN_STR));
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-n);
+		return ;
+	}
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar(ITOC(n % 10));
+}
