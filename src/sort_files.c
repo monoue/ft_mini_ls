@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 08:58:32 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 14:16:06 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 23:14:35 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	swap_files(t_file_data *file_data_arr, int left, int right)
 	file_data_arr[right] = tmp;
 }
 
-void	sort_time_ordered_files_by_name(t_file_data *file_data_arr, int files_num)
+void	sort_time_ordered_files_by_name(t_file_data *file_data_arr,
+																int files_num)
 {
 	int			l_index;
 	int			r_index;

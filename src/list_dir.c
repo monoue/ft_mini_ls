@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 09:07:50 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 15:37:27 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 23:14:54 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int			count_files(void)
 	return (files_num);
 }
 
-static void			put_all_file_names(t_file_data *file_data_arr, int files_num)
+static void			put_all_file_names(t_file_data *file_data_arr,
+																int files_num)
 {
 	int	index;
 
