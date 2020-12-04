@@ -6,7 +6,7 @@
 #    By: monoue <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 15:33:41 by monoue            #+#    #+#              #
-#    Updated: 2020/12/04 17:15:51 by monoue           ###   ########.fr        #
+#    Updated: 2020/12/04 21:20:28 by monoue           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ BONUS_PATH =		bonus/
 LIBFT_PATH =		libft/
 PLAYGROUND_PATH =	playground/
 OPTION_PATH = option/
+SORT_FILES_PATH = sort_files/
+PRINTER_PATH = printer/
 
 LIBFT =				$(LIBFT_PATH)libft.a
 
@@ -31,12 +33,16 @@ SRCS_NAME += sort_files.c
 
 BSRCS_NAME += main_bonus.c
 BSRCS_NAME += global_bonus.c
-BSRCS_NAME += sort_files_bonus.c
-BSRCS_NAME += sort_files_by_time_bonus.c
-BSRCS_NAME += swap_files_bonus.c
+BSRCS_NAME += $(SORT_FILES_PATH)sort_files_bonus.c
+BSRCS_NAME += $(SORT_FILES_PATH)sort_files_by_time_bonus.c
+BSRCS_NAME += $(SORT_FILES_PATH)swap_files_bonus.c
 BSRCS_NAME += parse_all_command_arguments_bonus.c
-BSRCS_NAME += put_all_file_names_bonus.c
-BSRCS_NAME += put_type_specifier_bonus.c
+BSRCS_NAME += $(PRINTER_PATH)put_all_file_names_bonus.c
+BSRCS_NAME += $(PRINTER_PATH)put_type_indicator_bonus.c
+BSRCS_NAME += $(PRINTER_PATH)put_file_name_with_color_bonus.c
+BSRCS_NAME += count_files_bonus.c
+BSRCS_NAME += set_element_plus_spaces_len_bonus.c
+BSRCS_NAME += is_current_or_parent_dir_bonus.c
 BSRCS_NAME +=
 BSRCS_NAME +=
 
