@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 14:13:39 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 16:03:56 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 16:53:37 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_files(t_file_data *file_data_arr, int files_num);
 void	sort_files_by_time(t_file_data *file_data_arr, int files_num);
 int		parse_all_command_arguments(int argc, char *argv[]);
 void	put_all_file_names(t_file_data *file_data_arr, int files_num);
-void	put_type_specifier(mode_t mode);
+int		put_type_specifier(mode_t mode);
 
 
 #endif

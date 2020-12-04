@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:35:23 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 15:24:46 by monoue           ###   ########.fr       */
+/*   Updated: 2020/12/04 16:56:47 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@
 
 # define S_IXUGO (S_IXUSR | S_IXGRP | S_IXOTH)
 
-void	put_type_specifier(mode_t mode);
+// void	put_type_specifier(mode_t mode);
 
 #endif
