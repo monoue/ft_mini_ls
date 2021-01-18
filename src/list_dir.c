@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 09:07:50 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 23:14:54 by monoue           ###   ########.fr       */
+/*   Updated: 2021/01/19 07:04:23 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static t_file_data	*get_all_files_data(DIR *dir, const int files_num)
 			perror(dir_ent->d_name);
 			continue ;
 		}
-		file_data_arr[index].name = dir_ent->d_name;
+		file_data_arr[index].name = ft_strdup(dir_ent->d_name);
 		file_data_arr[index].tv_sec = dent_stat.st_mtimespec.tv_sec;
 		file_data_arr[index].tv_nsec = dent_stat.st_mtimespec.tv_nsec;
 		index++;

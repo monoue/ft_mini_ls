@@ -6,7 +6,7 @@
 /*   By: monoue <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 13:33:20 by monoue            #+#    #+#             */
-/*   Updated: 2020/12/04 22:20:35 by monoue           ###   ########.fr       */
+/*   Updated: 2021/01/19 07:06:32 by monoue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	set_file_data(t_file_data *file_data, char *file_name)
 		perror(file_name);
 		return (CONTINUE);
 	}
-	file_data->name = file_name;
+	file_data->name = ft_strdup(file_name);
 	file_data->tv_sec = dent_stat.st_mtimespec.tv_sec;
 	file_data->tv_nsec = dent_stat.st_mtimespec.tv_nsec;
 	file_data->mode = dent_stat.st_mode;
