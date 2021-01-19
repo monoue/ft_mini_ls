@@ -106,4 +106,4 @@ file_data_arr[index].tv_sec = dent_stat.st_mtimespec.tv_sec; // 作成秒
 file_data_arr[index].tv_nsec = dent_stat.st_mtimespec.tv_nsec; // 作成ミリ秒
 ```
 
-- `stat` 構造体のメンバーについて、詳細は[ソース１]([https://www.c-lang.net/stat/index.html](https://www.c-lang.net/stat/index.html)) や[ソース２]([https://nxmnpg.lemoda.net/ja/2/stat](https://nxmnpg.lemoda.net/ja/2/stat))を参照。
+- `stat` 構造体のメンバーについて、詳細は[ソース１](https://www.c-lang.net/stat/index.html) や[ソース２](https://nxmnpg.lemoda.net/ja/2/stat)を参照。
